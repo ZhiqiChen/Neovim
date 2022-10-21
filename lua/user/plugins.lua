@@ -40,23 +40,20 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-    -- My plugins here
+    -- Background Plugins
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    use "nvim-tree/nvim-web-devicons"
+    use "nvim-tree/nvim-web-devicons" -- many plugins use this icon set
     use "akinsho/bufferline.nvim" -- tabs on the top
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
-
-
+    use "EdenEast/nightfox.nvim" -- ColorScheme
+    
     -- Language Specific
     -- LaTex
-    -- use {
-    --     "lervag/vimtex",
-    --     ft = 'tex' 
-    -- }
     use "lervag/vimtex"
+
 
     -- Functionalities
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -65,16 +62,13 @@ return packer.startup(function(use)
     -- use 'terryma/vim-multiple-cursors'
     use "tpope/vim-surround"
 
-    -- Colorschemes
-    use "EdenEast/nightfox.nvim" -- Packer
-
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lsp"  -- lsp completion
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
