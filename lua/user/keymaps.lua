@@ -78,4 +78,6 @@ keymap("n", "<C-g>", ":Telescope live_grep<cr>", opts)
 keymap("n", "<A-[>", ":lua require('cmp').setup.buffer { enabled = false }<CR>", opts)
 keymap("n", "<A-]>", ":lua require('cmp').setup.buffer { enabled = true }<CR>", opts)
 -- keymap("i", "<A-[>", "<Esc>:lua require('cmp').setup.buffer { enabled = false }", opts)
--- keymap("i", "<A-]>", "<Esc>:lua require('cmp').setup.buffer { enabled = true }", opts)
+
+-- luasnip
+keymap("i", "jk", "<Esc>:lua require('luasnip').expand_or_jump()<CR>", opts)
