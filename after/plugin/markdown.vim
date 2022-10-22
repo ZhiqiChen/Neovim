@@ -3,33 +3,33 @@
 "Markdown stuff
 
 " pressing ctrl-L to fix spelling mistakes
-autocmd FileType markdown inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-autocmd FileType markdown nnoremap <buffer> <C-Space> /<++><Enter>"_c4l
-autocmd FileType markdown inoremap <buffer> <C-Space> <Esc>/<++><Enter>"_c4l
-autocmd FileType markdown inoremap <buffer> ;bf ****<Space><++><Esc>2F*i
-autocmd FileType markdown inoremap <buffer> ;it __<Space><++><Esc>F_i
-autocmd FileType markdown inoremap <buffer> ;hr [](<++>)<Space><++><Esc>F]i
-autocmd FileType markdown inoremap <buffer> ;im ![](<++>)<Space><++><Esc>F]i
-autocmd FileType markdown nnoremap j gj
-autocmd FileType markdown nnoremap k gk
+" autocmd FileType markdown inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+autocmd FileType markdown nnoremap <buffer> <C-;> /<++><Enter>"_c4l
+autocmd FileType markdown inoremap <buffer> <C-;> <Esc>/<++><Enter>"_c4l
+" autocmd FileType markdown inoremap <buffer> ;bf ****<Space><++><Esc>2F*i
+" autocmd FileType markdown inoremap <buffer> ;it __<Space><++><Esc>F_i
+" autocmd FileType markdown inoremap <buffer> ;hr [](<++>)<Space><++><Esc>F]i
+" autocmd FileType markdown inoremap <buffer> ;im ![](<++>)<Space><++><Esc>F]i
+" autocmd FileType markdown nnoremap j gj
+" autocmd FileType markdown nnoremap k gk
 " autocmd FileType markdown inoremap <Tab> <c-t>
 " autocmd FileType markdown inoremap <s-tab> <c-d>
 
 " lists
-function! s:MarkdownOrderedList(rowNum) abort
-    if a:rowNum > 0
-        let outputTextList = []
-        for i in range(1,a:rowNum,+1)
-            call add(outputTextList, i .. ")")
-        endfor
-        call append(line("."), outputTextList)
-    else
-        echom "Please give numbers bigger than 0."
-    endif
-    return 1
-endfunction
-command! -buffer -nargs=1 CreateMarkdownList call <SID>MarkdownOrderedList(<args>)
-autocmd FileType markdown nnoremap <buffer>;ol <Cmd>execute "CreateMarkdownList " . expand("<cword>")<CR>
+" function! s:MarkdownOrderedList(rowNum) abort
+"     if a:rowNum > 0
+"         let outputTextList = []
+"         for i in range(1,a:rowNum,+1)
+"             call add(outputTextList, i .. ")")
+"         endfor
+"         call append(line("."), outputTextList)
+"     else
+"         echom "Please give numbers bigger than 0."
+"     endif
+"     return 1
+" endfunction
+" command! -buffer -nargs=1 CreateMarkdownList call <SID>MarkdownOrderedList(<args>)
+" autocmd FileType markdown nnoremap <buffer>;ol <Cmd>execute "CreateMarkdownList " . expand("<cword>")<CR>
 
 "tables
 
@@ -52,8 +52,8 @@ command! -buffer -nargs=+ CreateMarkdownTable call <SID>MarkdownTable(<f-args>)
 " autocmd FileType markdown nnoremap <buffer>;ta <Cmd>:>execute CommandCreateMarkdownTable<Space><CR>
 
 " Math
-autocmd FileType markdown inoremap <buffer> ;eq $$<Space><++><Esc>2T$i
-autocmd FileType markdown inoremap <buffer> ;eeq $$<CR><CR>$$<CR><CR><++><Esc>3kA
+" autocmd FileType markdown inoremap <buffer> ;eq $$<Space><++><Esc>2T$i
+" autocmd FileType markdown inoremap <buffer> ;eeq $$<CR><CR>$$<CR><CR><++><Esc>3kA
 " autocmd FileType markdown inoremap <buffer> ;ra {\rightarrow}
 " autocmd FileType markdown inoremap <buffer> ;la {\leftarrow}
 " autocmd FileType markdown inoremap <buffer> ;lra {\leftrightarrow}
