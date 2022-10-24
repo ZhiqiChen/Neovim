@@ -80,7 +80,7 @@ return {
         fmta(
             [[
            _**<>**_
-           : <> $\boxed{<>}$ 
+           : <> $ \boxed{<>} $ 
       ]],
             {
                 i(1),
@@ -91,7 +91,7 @@ return {
     ),
     s({trig = "([^%a])mm", wordTrig = true},
         fmta(
-            "<>$<>$",
+            "<>$ <> $",
             {
                 f( function(_, snip) return snip.captures[1] end ),
                 i(1),
@@ -140,6 +140,29 @@ return {
 {
         -- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         -- AUTOSNIPPETS
+    s({trig = "$$", wordTrig = true},
+        fmta(
+            [[
+            <>$$
+            <>
+            $$
+      ]],
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                i(1),
+            }
+        )
+    ),
+    s({trig="\\tt", dscr="Text"},
+      fmta(
+      [[
+            \text{<>}
+      ]],
+            {
+                i(1),
+            }
+        )
+    ),
         s({trig="ii", dscr="italic"},
             fmta(
                 [[*<>*]],
@@ -157,7 +180,7 @@ return {
             )
         ),
         -- %%%%%% MATH Accents%%%%%%%%%
-        s({trig=";h", dscr="hat accent"},
+        s({trig=";hh", dscr="hat accent"},
           fmta(
           [[\hat{<>} ]],
                 {
@@ -165,9 +188,9 @@ return {
                 }
             )
         ),
-        s({trig=";t", dscr="tilda accent"},
+        s({trig=";t", dscr="tilde accent"},
           fmta(
-          [[\tilda{<>} ]],
+          [[\tilde{<>} ]],
                 {
                     i(1),
                 }
