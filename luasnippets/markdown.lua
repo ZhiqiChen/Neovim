@@ -79,7 +79,7 @@ return {
     s({trig="definition", dscr="Definition"},
         fmta(
             [[
-           <>
+           _**<>**_
            : <> $\boxed{<>}$ 
       ]],
             {
