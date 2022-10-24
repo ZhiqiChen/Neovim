@@ -301,5 +301,15 @@ return {
         }
       )
     ),
+        s({trig="sqr", dscr="square root"},
+          fmta(
+          [[
+                \sqrt{<>}
+          ]],
+                {
+                    i(1),
+                }
+            )
+        ),
 
 }

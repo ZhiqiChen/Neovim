@@ -31,7 +31,7 @@ vim.opt.updatetime = 300                        -- faster completion (4000ms def
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 -- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
+vim.opt.conceallevel = 1                        -- so that `` is visible in markdown files
 vim.opt.pumheight = 10                          -- pop up menu height
 
 vim.cmd "colorscheme nordfox"
