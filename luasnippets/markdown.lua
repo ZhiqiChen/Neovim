@@ -89,15 +89,6 @@ return {
             }
         )
     ),
-    s({trig = "([^%a])mm", wordTrig = true},
-        fmta(
-            "<>$ <> $",
-            {
-                f( function(_, snip) return snip.captures[1] end ),
-                i(1),
-            }
-        )
-    ),
         s({trig="matrix", dscr="make a matrix"},
           fmta(
           [[
@@ -110,13 +101,30 @@ return {
                 }
             )
         ),
+        s({trig="vmatrix", dscr="Verticle Matrix"},
+          fmta(
+          [[
+                \begin{bmatrix}
+                    <>_{1} \\
+                    <>_{2} \\
+                    \vdots \\
+                    <>_{n}
+                \end{bmatrix}
+          ]],
+                {
+                    i(1),
+                    rep(1),
+                    rep(1)
+                }
+            )
+        ),
         s({trig="nnmatrix", dscr="make a nxn matrix"},
           fmta(
           [[
                 \begin{bmatrix}
                     <>_{1 1} & <>_{1 2} & <>_{1 3} & \cdots & <>_{1 n} \\
                     <>_{2 1} & <>_{2 2} & <>_{2 3} & \cdots & <>_{2 n} \\
-                    \vdots & \vdots & \ddots & \cdots & \ddots  \\
+                    \vdots   &   \vdots & \ddots   & \cdots & \ddots   \\
                     <>_{n 1} & <>_{n 2} & <>_{n 3} & \cdots & <>_{n n} \\
                 \end{bmatrix}
           ]],
@@ -136,11 +144,63 @@ return {
                 }
             )
         ),
+    s({trig="imatrix", dscr="identity matrix"},
+      fmta(
+      [[
+        \begin{bmatrix}
+        1                                  \\
+        & 1             &   & \text{\huge0}\\
+        &               & \ddots           \\
+        & \text{\huge0} &   & 1            \\
+        &               &   &   & 1
+        \end{bmatrix}
+      ]],{}
+        )
+    ),
+    s({trig="umatrix", dscr="upper triangle matrix"},
+      fmta(
+      [[
+        \begin{bmatrix}
+        <>_{1 1} &      <>_{1 2} & \cdots  & \cdots & <>_{1 n} \\
+                 &      <>_{2 2} &         &        & \vdots   \\
+                 &               & \ddots \\
+                 & \text{\huge0} &         & \ddots & \vdots   \\
+                 &               &         &        & <>_{n n}
+        \end{bmatrix}
+      ]],
+            {
+                i(1),
+                rep(1),
+                rep(1),
+                rep(1),
+                rep(1),
+            }
+        )
+    ),
+    s({trig="lmatrix", dscr="lower triangle matrix"},
+      fmta(
+      [[
+        \begin{bmatrix}
+        <>_{1 1} &        &        &               &          \\
+        <>_{2 1} & \ddots &        & \text{\huge0} &          \\
+        \vdots   &        & \ddots &               &          \\
+        \vdots   &        &        &        \ddots &          \\
+        <>_{n 1} & \cdots & \cdots &        \cdots & <>_{n n} \\
+        \end{bmatrix}
+      ]],
+            {
+                i(1),
+                rep(1),
+                rep(1),
+                rep(1),
+            }
+        )
+    ),
 },
 {
         -- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         -- AUTOSNIPPETS
-    s({trig = "$$", wordTrig = true},
+    s({trig = "$$", wordTrig = false, regTrig = true},
         fmta(
             [[
             <>$$
@@ -153,10 +213,19 @@ return {
             }
         )
     ),
+    s({trig = "([^%a])mm", wordTrig = false, regTrig = true},
+        fmta(
+            "<>$<>$",
+            {
+                f( function(_, snip) return snip.captures[1] end ),
+                i(1),
+            }
+        )
+    ),
     s({trig="\\tt", dscr="Text"},
       fmta(
       [[
-            \text{<>}
+            \text{ <>}
       ]],
             {
                 i(1),
@@ -204,7 +273,7 @@ return {
                 }
             )
         ),
-        s({trig=";u", dscr="under brace Accents"},
+        s({trig=";un", dscr="under brace Accents"},
           fmta(
           [[\underbrace{<>}_{\text{<>}} ]],
                 {
@@ -223,32 +292,57 @@ return {
             )
         ),
         -- %%%%%% MATH Symbols%%%%%%%%%
+        s({trig=";al", dscr="alpha symbol"},
+           {t("\\alpha")}
+        ),
+        s({trig=";be", dscr="beta symbol"},
+           {t("\\beta")}
+        ),
+        s({trig=";de", dscr="delta symbol"},
+           {t("\\delta")}
+        ),
+        s({trig=";ep", dscr="epsilon symbol"},
+           {t("\\epsilon")}
+        ),
+        s({trig=";th", dscr="theta symbol"},
+           {t("\\theta")}
+        ),
+        s({trig=";la", dscr="lambda symbol"},
+           {t("\\lambda")}
+        ),
+        s({trig=";pi", dscr="pi symbol"},
+           {t("\\pi")}
+        ),
+        s({trig=";om", dscr="omega symbol"},
+           {t("\\omega")}
+        ),
+        -- -- --
         s({trig=";fa", dscr="forall symbol"},
-            {t("\\forall ")}
+            {t(" \\forall ")}
         ),
         s({trig=";ex", dscr="exist symbol"},
-           {t("\\exist ")}
+           {t(" \\exist ")}
         ),
         s({trig=";of", dscr="in symbol "},
-           {t("\\in ")}
+           {t(" \\in ")}
         ),
         s({trig=";nin", dscr="not in sym"},
-           {t("\\notin ")}
+           {t(" \\notin ")}
         ),
-        s({trig=";=>", dscr="implies"},
-           {t("\\implies ")}
+        s({trig=";->", dscr="implies"},
+           {t(" \\implies ")}
         ),
         s({trig=";in", dscr="infinity sym"},
-           {t("\\infty ")}
+           {t(" \\infty ")}
         ),
         s({trig=";N", dscr="Natural Numbers"},
-           {t("\\natnums ")}
+           {t(" \\natnums ")}
         ),
         s({trig=";C", dscr="Complex Numbers"},
-           {t("\\Complex ")}
+           {t(" \\Complex ")}
         ),
         s({trig=";R", dscr="Real Numbers"},
-           {t("\\Reals ")}
+           {t(" \\Reals ")}
         ),
         -- %%%%%% MATH operators%%%%%%%%%
         s({trig=";sum", dscr="Sum from i=1 to n"},
@@ -301,11 +395,8 @@ return {
         }
       )
     ),
-        s({trig="sqr", dscr="square root"},
-          fmta(
-          [[
-                \sqrt{<>}
-          ]],
+        s({trig=";sq", dscr="square root"},
+          fmta( [[ \sqrt{<>} ]],
                 {
                     i(1),
                 }

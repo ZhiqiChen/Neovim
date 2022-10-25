@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/home/zhiqic/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-easy-align"] = {
+    loaded = true,
+    path = "/home/zhiqic/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/zhiqic/.local/share/nvim/site/pack/packer/start/vim-surround",
