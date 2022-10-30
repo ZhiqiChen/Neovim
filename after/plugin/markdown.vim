@@ -5,9 +5,9 @@
 " pressing ctrl-L to fix spelling mistakes
 " autocmd FileType markdown inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-autocmd FileType markdown set wrap linebreak tw=80 " adds wrapping
-autocmd FileType markdown nnoremap <buffer> <C-;> /<++><Enter>"_c4l
-autocmd FileType markdown inoremap <buffer> <C-;> <Esc>/<++><Enter>"_c4l
+autocmd FileType markdown set wrap linebreak " adds wrapping
+autocmd FileType markdown nnoremap <buffer> <c-;> /<++><Enter>"_c4l
+autocmd FileType markdown inoremap <buffer> <c-;> <Esc>/<++><Enter>"_c4l
 " autocmd FileType markdown inoremap <buffer> ;bf ****<Space><++><Esc>2F*i
 " autocmd FileType markdown inoremap <buffer> ;it __<Space><++><Esc>F_i
 " autocmd FileType markdown inoremap <buffer> ;hr [](<++>)<Space><++><Esc>F]i

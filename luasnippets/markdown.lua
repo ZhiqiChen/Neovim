@@ -8,6 +8,19 @@ local get_visual = function(args, parent)
   end
 end
 
+
+local createCustomMatrix = function(row, column)
+    local matrix = [[]]
+    for i=1,row do
+        for i=1,column-1 do
+            matrix = matrix .. "<++> & "
+        end
+        matrix = matrix .. '<++> \\\\'
+    end
+    return matrix
+end
+
+    
 -- vimtex doesn't work in markdown files
 -- local in_mathzone = function(args, parent)
 --     return vim.fn['vimtex#syntax#in_mathzone']() == 1
@@ -101,6 +114,19 @@ return {
                 }
             )
         ),
+        s({trig="(%d+)[x,](%d+)ma", dscr="Make a Custom sized Matrix", regTrig = true},
+        fmta(
+            [[
+                \begin{bmatrix}
+                <>
+                \end{bmatrix}
+            ]],
+                {
+                    f(function(_, snip)
+                        return createCustomMatrix(snip.captures[1], snip.captures[2]) end)
+                }
+            )
+        ),
         s({trig="vmatrix", dscr="Verticle Matrix"},
           fmta(
           [[
@@ -122,17 +148,14 @@ return {
           fmta(
           [[
                 \begin{bmatrix}
-                    <>_{1 1} & <>_{1 2} & <>_{1 3} & \cdots & <>_{1 n} \\
-                    <>_{2 1} & <>_{2 2} & <>_{2 3} & \cdots & <>_{2 n} \\
-                    \vdots   &   \vdots & \ddots   & \cdots & \ddots   \\
-                    <>_{n 1} & <>_{n 2} & <>_{n 3} & \cdots & <>_{n n} \\
+                    <>_{1 1} & <>_{1 2} & \cdots & <>_{1 n} \\
+                    <>_{2 1} & <>_{2 2} & \cdots & <>_{2 n} \\
+                    \vdots   &   \vdots & \ddots   & \vdots   \\
+                    <>_{n 1} & <>_{n 2} & \cdots & <>_{n n} \\
                 \end{bmatrix}
           ]],
                 {
                     i(1),
-                    rep(1),
-                    rep(1),
-                    rep(1),
                     rep(1),
                     rep(1),
                     rep(1),
@@ -155,6 +178,23 @@ return {
         &               &   &   & 1
         \end{bmatrix}
       ]],{}
+        )
+    ),
+    s({trig="dmatrix", dscr="Diagonal Matrix"},
+      fmta(
+      [[
+        \begin{bmatrix}
+        <>_{1}              &        &         & \text{\huge0} \\
+                            & <>_{2} &        \\
+                            &        & \ddots \\
+              \text{\huge0} &        &         &        <>_{n} \\
+        \end{bmatrix}
+      ]],
+            {
+                i(1),
+                rep(1),
+                rep(1),
+            }
         )
     ),
     s({trig="umatrix", dscr="upper triangle matrix"},
