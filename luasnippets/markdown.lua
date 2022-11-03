@@ -331,6 +331,30 @@ return {
                 }
             )
         ),
+        s({trig="||", dscr="vert"},
+          fmta(
+          [[
+                \|<>\|
+          ]],
+                {
+                    i(1),
+                }
+            )
+        ),
+        s({trig=";$", dscr="math with align"},
+          fmta(
+          [[
+                $$
+                \begin{align*}
+                    <>
+                \end{align*}
+                $$
+          ]],
+                {
+                    i(1),
+                }
+            )
+        ),
         -- %%%%%% MATH Symbols%%%%%%%%%
         s({trig=";al", dscr="alpha symbol"},
            {t("\\alpha")}
