@@ -46,54 +46,14 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "nvim-tree/nvim-web-devicons" -- many plugins use this icon set
     use "akinsho/bufferline.nvim" -- tabs on the top
-    use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
     use "EdenEast/nightfox.nvim" -- ColorScheme
-    
-    -- Language Specific
-    -- LaTex
-    use "lervag/vimtex"
-
 
     -- Functionalities
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
     use "nvim-tree/nvim-tree.lua"
-    -- use 'terryma/vim-multiple-cursors'
     use "tpope/vim-surround"
-    use "junegunn/vim-easy-align" -- [ga] aligning for markdown tables/matrices
-
-    -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"  -- lsp completion
-
-    -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-    -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/mason.nvim" -- simple to use language server installer
-    use "williamboman/mason-lspconfig.nvim"
-    -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
-    -- Telescope
-    use "nvim-telescope/telescope.nvim"
-
-    -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-    use "JoosepAlviste/nvim-ts-context-commentstring"
-
-    -- Git
-    use "lewis6991/gitsigns.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
