@@ -1,6 +1,7 @@
 -- :help options
 vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.autoindent = true
 vim.opt.smartindent = true                      -- make indenting smarter again

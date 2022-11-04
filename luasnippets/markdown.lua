@@ -12,7 +12,7 @@ end
 local createCustomMatrix = function(row, column)
     local matrix = [[]]
     for i=1,row do
-        for i=1,column-1 do
+        for j=1,column-1 do
             matrix = matrix .. "<++> & "
         end
         matrix = matrix .. '<++> \\\\'
@@ -20,7 +20,6 @@ local createCustomMatrix = function(row, column)
     return matrix
 end
 
-    
 -- vimtex doesn't work in markdown files
 -- local in_mathzone = function(args, parent)
 --     return vim.fn['vimtex#syntax#in_mathzone']() == 1
@@ -92,7 +91,7 @@ return {
     s({trig="definition", dscr="Definition"},
         fmta(
             [[
-           _**<>**_
+           ***<>***
            : <> $ \boxed{<>} $ 
       ]],
             {
@@ -283,6 +282,16 @@ return {
         s({trig="bb", dscr="bold"},
             fmta(
                 [[**<>**]],
+                {
+                    i(1),
+                }
+            )
+        ),
+        s({trig=";bo", dscr="boxed"},
+          fmta(
+          [[
+                \boxed{<>}
+          ]],
                 {
                     i(1),
                 }
