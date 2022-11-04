@@ -49,15 +49,19 @@ return packer.startup(function(use)
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
     use "EdenEast/nightfox.nvim" -- ColorScheme
-    
+
     -- Language Specific
     -- LaTex
     use "lervag/vimtex"
 
-
     -- Functionalities
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-    use "numToStr/Comment.nvim" -- Easily comment stuff
+    use {
+        "numToStr/Comment.nvim", -- Easily comment stuff
+        config = function()
+            require('Comment').setup()
+        end
+    }
     use "nvim-tree/nvim-tree.lua"
     -- use 'terryma/vim-multiple-cursors'
     use "tpope/vim-surround"
@@ -90,7 +94,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    use "JoosepAlviste/nvim-ts-context-commentstring"
+    -- use "JoosepAlviste/nvim-ts-context-commentstring" different context comments jsx
 
     -- Git
     use "lewis6991/gitsigns.nvim"
