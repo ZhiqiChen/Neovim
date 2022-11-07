@@ -92,7 +92,7 @@ return {
         fmta(
             [[
            ***<>***
-           : <> $ \boxed{<>} $ 
+           : <> $\boxed{<>}$ 
       ]],
             {
                 i(1),
@@ -254,7 +254,7 @@ return {
     ),
     s({trig = "([^%a])mm", wordTrig = false, regTrig = true},
         fmta(
-            "<>$<>$",
+            "<>$<>$ ",
             {
                 f( function(_, snip) return snip.captures[1] end ),
                 i(1),
@@ -300,7 +300,7 @@ return {
         -- %%%%%% MATH Accents%%%%%%%%%
         s({trig=";hh", dscr="hat accent"},
           fmta(
-          [[\hat{<>} ]],
+          [[\hat{<>}]],
                 {
                     i(1),
                 }
@@ -308,7 +308,7 @@ return {
         ),
         s({trig=";t", dscr="tilde accent"},
           fmta(
-          [[\tilde{<>} ]],
+          [[\tilde{<>}]],
                 {
                     i(1),
                 }
@@ -316,7 +316,7 @@ return {
         ),
         s({trig=";v", dscr="vector accent"},
           fmta(
-          [[\vec{<>} ]],
+          [[\vec{<>}]],
                 {
                     i(1),
                 }
@@ -324,7 +324,7 @@ return {
         ),
         s({trig=";un", dscr="under brace Accents"},
           fmta(
-          [[\underbrace{<>}_{\text{<>}} ]],
+          [[\underbrace{<>}_{\text{<>}}]],
                 {
                     i(1),
                     i(2),
@@ -334,7 +334,7 @@ return {
         -- %%%%%% MATH environment%%%%%%%%%
         s({trig="((", dscr="large brackets"},
           fmta(
-          [[\left( <> \right) ]],
+          [[\left( <> \right)]],
                 {
                     i(1),
                 }
@@ -417,6 +417,12 @@ return {
         s({trig=";R", dscr="Real Numbers"},
            {t(" \\Reals ")}
         ),
+        s({trig=";if", dscr="if and only if"},
+           {t("\\iff")}
+        ),
+        s({trig="\\q", dscr="spacing"},
+           {t("\\qquad")}
+        ),
         -- %%%%%% MATH operators%%%%%%%%%
         s({trig=";sum", dscr="Sum from i=1 to n"},
           fmta(
@@ -436,6 +442,18 @@ return {
           ]],
                 {
                     i(1, "\\infty"),
+                }
+            )
+        ),
+        s({trig=";fun", dscr="function mapping"},
+          fmta(
+          [[
+                <>: <> \longmapsto <>
+          ]],
+                {
+                    i(1, "f"),
+                    i(2, "\\R"),
+                    i(3, "\\R"),
                 }
             )
         ),
