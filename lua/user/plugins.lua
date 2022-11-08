@@ -51,7 +51,12 @@ return packer.startup(function(use)
 
     -- Functionalities
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-    use "numToStr/Comment.nvim" -- Easily comment stuff
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
     use "nvim-tree/nvim-tree.lua"
     use "tpope/vim-surround"
 
