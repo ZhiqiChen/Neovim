@@ -85,3 +85,6 @@ keymap("i", "jk", "<Esc>:lua require('luasnip').expand_or_jump()<CR>", opts)
 -- Easy Align
 keymap("n", "ga", ":EasyAlign<CR>", opts)
 keymap("x", "ga", ":EasyAlign<CR>", opts)
+
+-- null-ls format
+keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
