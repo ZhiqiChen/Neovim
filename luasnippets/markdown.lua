@@ -476,6 +476,24 @@ return {
             }
           )
         ),
+        s({trig = '([%a%)%]%}])00', regTrig = true, wordTrig = false, dscr="subscript 2" },
+          fmta(
+            "<>_{<>}",
+            {
+              f( function(_, snip) return snip.captures[1] end ),
+              i(1)
+            }
+          )
+        ),
+        s({trig = '([%a%)%]%}])99', regTrig = true, wordTrig = false, dscr="superscript 2" },
+          fmta(
+            "<>^{<>}",
+            {
+              f( function(_, snip) return snip.captures[1] end ),
+              i(1)
+            }
+          )
+        ),
     s({trig = '([^%a])ff', regTrig = true, wordTrig = false},
       fmta(
         [[<>\frac{<>}{<>}]],
