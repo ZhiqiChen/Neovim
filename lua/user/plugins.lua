@@ -65,6 +65,7 @@ return packer.startup(function(use)
     use "nvim-tree/nvim-tree.lua"
     -- use 'terryma/vim-multiple-cursors'
     use "tpope/vim-surround"
+    use "tpope/vim-repeat"
     use "junegunn/vim-easy-align" -- [ga] aligning for markdown tables/matrices
 
     -- cmp plugins

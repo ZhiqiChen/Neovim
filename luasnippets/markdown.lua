@@ -420,7 +420,7 @@ return {
         s({trig=";if", dscr="if and only if"},
            {t("\\iff")}
         ),
-        s({trig="\\q", dscr="spacing"},
+        s({trig="\\t", dscr="tab spacing"},
            {t("\\qquad")}
         ),
         -- %%%%%% MATH operators%%%%%%%%%
