@@ -271,6 +271,9 @@ return {
             }
         )
     ),
+        s({trig="\\ta", dscr="tab spacing"},
+           {t("\\qquad")}
+        ),
         s({trig="ii", dscr="italic"},
             fmta(
                 [[*<>*]],
@@ -420,9 +423,6 @@ return {
         s({trig=";if", dscr="if and only if"},
            {t("\\iff")}
         ),
-        s({trig="\\t", dscr="tab spacing"},
-           {t("\\qquad")}
-        ),
         -- %%%%%% MATH operators%%%%%%%%%
         s({trig=";sum", dscr="Sum from i=1 to n"},
           fmta(
@@ -511,5 +511,4 @@ return {
                 }
             )
         ),
-
 }
