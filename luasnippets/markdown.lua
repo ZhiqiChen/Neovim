@@ -252,6 +252,20 @@ return {
             }
         )
     ),
+    s({trig=";$", dscr="math with align"},
+      fmta(
+      [[
+            $$
+            \begin{align*}
+                <>
+            \end{align*}
+            $$
+      ]],
+            {
+                i(1),
+            }
+        )
+    ),
     s({trig = "([^%a])mm", wordTrig = false, regTrig = true},
         fmta(
             "<>$<>$ ",
@@ -271,229 +285,217 @@ return {
             }
         )
     ),
-        s({trig="\\ta", dscr="tab spacing"},
-           {t("\\qquad")}
-        ),
-        s({trig="ii", dscr="italic"},
-            fmta(
-                [[*<>*]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig="bb", dscr="bold"},
-            fmta(
-                [[**<>**]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig=";bo", dscr="boxed"},
-          fmta(
-          [[
-                \boxed{<>}
-          ]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        -- %%%%%% MATH Accents%%%%%%%%%
-        s({trig=";hh", dscr="hat accent"},
-          fmta(
-          [[\hat{<>}]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig=";t", dscr="tilde accent"},
-          fmta(
-          [[\tilde{<>}]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig=";v", dscr="vector accent"},
-          fmta(
-          [[\vec{<>}]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig=";un", dscr="under brace Accents"},
-          fmta(
-          [[\underbrace{<>}_{\text{<>}}]],
-                {
-                    i(1),
-                    i(2),
-                }
-            )
-        ),
-        -- %%%%%% MATH environment%%%%%%%%%
-        s({trig="((", dscr="large brackets"},
-          fmta(
-          [[\left( <> \right)]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig="||", dscr="vert"},
-          fmta(
-          [[
-                \|<>\|
-          ]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        s({trig=";$", dscr="math with align"},
-          fmta(
-          [[
-                $$
-                \begin{align*}
-                    <>
-                \end{align*}
-                $$
-          ]],
-                {
-                    i(1),
-                }
-            )
-        ),
-        -- %%%%%% MATH Symbols%%%%%%%%%
-        s({trig=";al", dscr="alpha symbol"},
-           {t("\\alpha")}
-        ),
-        s({trig=";be", dscr="beta symbol"},
-           {t("\\beta")}
-        ),
-        s({trig=";de", dscr="delta symbol"},
-           {t("\\delta")}
-        ),
-        s({trig=";ep", dscr="epsilon symbol"},
-           {t("\\epsilon")}
-        ),
-        s({trig=";th", dscr="theta symbol"},
-           {t("\\theta")}
-        ),
-        s({trig=";la", dscr="lambda symbol"},
-           {t("\\lambda")}
-        ),
-        s({trig=";pi", dscr="pi symbol"},
-           {t("\\pi")}
-        ),
-        s({trig=";om", dscr="omega symbol"},
-           {t("\\omega")}
-        ),
-        -- -- --
-        s({trig=";fa", dscr="forall symbol"},
-            {t(" \\forall ")}
-        ),
-        s({trig=";ex", dscr="exist symbol"},
-           {t(" \\exist ")}
-        ),
-        s({trig=";of", dscr="in symbol "},
-           {t(" \\in ")}
-        ),
-        s({trig=";nin", dscr="not in sym"},
-           {t(" \\notin ")}
-        ),
-        s({trig=";->", dscr="implies"},
-           {t(" \\implies ")}
-        ),
-        s({trig=";in", dscr="infinity sym"},
-           {t(" \\infty ")}
-        ),
-        s({trig=";N", dscr="Natural Numbers"},
-           {t(" \\natnums ")}
-        ),
-        s({trig=";C", dscr="Complex Numbers"},
-           {t(" \\Complex ")}
-        ),
-        s({trig=";R", dscr="Real Numbers"},
-           {t(" \\Reals ")}
-        ),
-        s({trig=";if", dscr="if and only if"},
-           {t("\\iff")}
-        ),
-        -- %%%%%% MATH operators%%%%%%%%%
-        s({trig=";sum", dscr="Sum from i=1 to n"},
-          fmta(
-          [[
-               \displaystyle\sum_{i=<>}^{<>} 
-          ]],
-                {
-                    i(1, "1"),
-                    i(2, "n"),
-                }
-            )
-        ),
-        s({trig=";lim", dscr="Limit as x->infty"},
-          fmta(
-          [[
-               \lim\limits_{x \rightarrow <>}
-          ]],
-                {
-                    i(1, "\\infty"),
-                }
-            )
-        ),
-        s({trig=";fun", dscr="function mapping"},
-          fmta(
-          [[
-                <>: <> \longmapsto <>
-          ]],
-                {
-                    i(1, "f"),
-                    i(2, "\\R"),
-                    i(3, "\\R"),
-                }
-            )
-        ),
-    -- %%%%%% MATH %%%%%%%%%
-        s({trig = '([%a%)%]%}])__', regTrig = true, wordTrig = false, dscr="subscript only for letter/brackets" },
-          fmta(
-            "<>_{<>}",
+    s({trig="\\ta", dscr="tab spacing"},
+       {t("\\qquad")}
+    ),
+    s({trig="ii", dscr="italic"},
+        fmta(
+            [[*<>*]],
             {
-              f( function(_, snip) return snip.captures[1] end ),
-              i(1)
+                i(1),
             }
-          )
-        ),
-        s({trig = '([%a%)%]%}])^^', regTrig = true, wordTrig = false, dscr="superscript only for letter/brackets" },
-          fmta(
-            "<>^{<>}",
+        )
+    ),
+    s({trig="bb", dscr="bold"},
+        fmta(
+            [[**<>**]],
             {
-              f( function(_, snip) return snip.captures[1] end ),
-              i(1)
+                i(1),
             }
-          )
-        ),
-        s({trig = '([%a%)%]%}])00', regTrig = true, wordTrig = false, dscr="subscript 2" },
-          fmta(
-            "<>_{<>}",
+        )
+    ),
+    s({trig=";bo", dscr="boxed"},
+      fmta(
+      [[
+            \boxed{<>}
+      ]],
             {
-              f( function(_, snip) return snip.captures[1] end ),
-              i(1)
+                i(1),
             }
-          )
-        ),
-        s({trig = '([%a%)%]%}])99', regTrig = true, wordTrig = false, dscr="superscript 2" },
-          fmta(
-            "<>^{<>}",
+        )
+    ),
+    -- %%%%%% MATH Accents%%%%%%%%%
+    s({trig=";hh", dscr="hat accent"},
+      fmta(
+      [[\hat{<>}]],
             {
-              f( function(_, snip) return snip.captures[1] end ),
-              i(1)
+                i(1, "x")
             }
-          )
-        ),
+        )
+    ),
+    s({trig=";t", dscr="tilde accent"},
+      fmta(
+      [[\tilde{<>}]],
+            {
+                i(1, "x")
+            }
+        )
+    ),
+    s({trig=";v", dscr="vector accent"},
+      fmta(
+      [[\vec{<>}]],
+            {
+                i(1, "x")
+            }
+        )
+    ),
+    s({trig=";un", dscr="under brace Accents"},
+      fmta(
+      [[\underbrace{<>}_{\text{<>}}]],
+            {
+                i(1),
+                i(2),
+            }
+        )
+    ),
+    -- %%%%%% MATH environment%%%%%%%%%
+    s({trig=";lb", dscr="large brackets"},
+      fmta(
+      [[\left\( <> \right\)]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s({trig="||", dscr="vert"},
+      fmta(
+      [[
+            \|<>\|
+      ]],
+            {
+                i(1),
+            }
+        )
+    ),
+    -- %%%%%% MATH Symbols%%%%%%%%%
+    s({trig=";al", dscr="alpha symbol"},
+       {t("\\alpha")}
+    ),
+    s({trig=";be", dscr="beta symbol"},
+       {t("\\beta")}
+    ),
+    s({trig=";de", dscr="delta symbol"},
+       {t("\\delta")}
+    ),
+    s({trig=";ep", dscr="epsilon symbol"},
+       {t("\\epsilon")}
+    ),
+    s({trig=";th", dscr="theta symbol"},
+       {t("\\theta")}
+    ),
+    s({trig=";la", dscr="lambda symbol"},
+       {t("\\lambda")}
+    ),
+    s({trig=";pi", dscr="pi symbol"},
+       {t("\\pi")}
+    ),
+    s({trig=";om", dscr="omega symbol"},
+       {t("\\omega")}
+    ),
+    -- Set Theory and logic --
+    s({trig=";fa", dscr="forall symbol"},
+        {t(" \\forall ")}
+    ),
+    s({trig=";ex", dscr="exist symbol"},
+       {t(" \\exist ")}
+    ),
+    s({trig=";of", dscr="in symbol "},
+       {t(" \\in ")}
+    ),
+    s({trig=";nin", dscr="not in sym"},
+       {t(" \\notin ")}
+    ),
+    s({trig=";->", dscr="implies"},
+       {t(" \\implies ")}
+    ),
+    s({trig=";in", dscr="infinity sym"},
+       {t(" \\infty ")}
+    ),
+    s({trig=";N", dscr="Natural Numbers"},
+       {t(" \\natnums ")}
+    ),
+    s({trig=";C", dscr="Complex Numbers"},
+       {t(" \\Complex ")}
+    ),
+    s({trig=";R", dscr="Real Numbers"},
+       {t(" \\Reals ")}
+    ),
+    s({trig=";if", dscr="if and only if"},
+       {t("\\iff")}
+    ),
+    -- %%%%%% MATH operators%%%%%%%%%
+    s({trig=";sum", dscr="Sum from i=1 to n"},
+      fmta(
+      [[
+           \displaystyle\sum_{<>=<>}^{<>} 
+      ]],
+            {
+                i(1, "i"),
+                i(2, "1"),
+                i(3, "n"),
+            }
+        )
+    ),
+    s({trig=";lim", dscr="Limit as x->infty"},
+      fmta(
+      [[
+           \lim\limits_{<> \rightarrow <>}
+      ]],
+            {
+                i(1, "x"),
+                i(2, "\\infty"),
+            }
+        )
+    ),
+    s({trig=";fun", dscr="function mapping"},
+      fmta(
+      [[
+            <>: <> \longmapsto <>
+      ]],
+            {
+                i(1, "f"),
+                i(2, "\\R"),
+                i(3, "\\R"),
+            }
+        )
+    ),
+-- %%%%%% MATH %%%%%%%%%
+    s({trig = '([%a%)%]%}])__', regTrig = true, wordTrig = false, dscr="subscript only for letter/brackets" },
+      fmta(
+        "<>_{<>}",
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          i(1)
+        }
+      )
+    ),
+    s({trig = '([%a%)%]%}])^^', regTrig = true, wordTrig = false, dscr="superscript only for letter/brackets" },
+      fmta(
+        "<>^{<>}",
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          i(1)
+        }
+      )
+    ),
+    s({trig = '([%a%)%]%}])00', regTrig = true, wordTrig = false, dscr="subscript 2" },
+      fmta(
+        "<>_{<>}",
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          i(1)
+        }
+      )
+    ),
+    s({trig = '([%a%)%]%}])99', regTrig = true, wordTrig = false, dscr="superscript 2" },
+      fmta(
+        "<>^{<>}",
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          i(1)
+        }
+      )
+    ),
     s({trig = '([^%a])ff', regTrig = true, wordTrig = false},
       fmta(
         [[<>\frac{<>}{<>}]],
