@@ -89,6 +89,7 @@ return packer.startup(function(use)
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
+    -- make sure you install ripgrep using a package manager
 
     -- Treesitter
     use {

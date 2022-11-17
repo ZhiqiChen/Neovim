@@ -82,7 +82,7 @@ return {
               \end{<>}
             ]],
             {
-                i(1),
+                i(1, "align*"),
                 i(0),
                 rep(1),  -- this node repeats insert node i(1)
             }
@@ -368,6 +368,12 @@ return {
         )
     ),
     -- %%%%%% MATH Symbols%%%%%%%%%
+    s({trig="++", dscr="exponential symbol", wordTrig= false},
+       {t("^")}
+    ),
+    s({trig="--", dscr="subscript symbol", wordTrig = false},
+       {t("_")}
+    ),
     s({trig=";al", dscr="alpha symbol"},
        {t("\\alpha")}
     ),
@@ -506,11 +512,11 @@ return {
         }
       )
     ),
-        s({trig=";sq", dscr="square root"},
-          fmta( [[ \sqrt{<>} ]],
-                {
-                    i(1),
-                }
-            )
-        ),
+    s({trig=";sq", dscr="square root"},
+      fmta( [[ \sqrt{<>} ]],
+            {
+                i(1),
+            }
+        )
+    ),
 }
