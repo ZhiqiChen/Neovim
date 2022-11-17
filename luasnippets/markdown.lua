@@ -28,9 +28,7 @@ end
 return {
     s({trig="link", dscr="markdown link"},
         fmta(
-        [[
-           [<>](<>) 
-        ]], 
+        [[[<>](<>)]], 
             {
                 i(1, "title"),
                 i(2, "link")
@@ -39,9 +37,7 @@ return {
     ),
     s({trig="linkInternal", dscr="link to header/sub-headers"},
         fmta(
-        [[
-            [<>](#<>)
-      ]],
+        [[[<>](#<>)]],
             {
                 i(1, "title"),
                 i(2, "link")
@@ -50,9 +46,7 @@ return {
     ),
     s({trig="image", dscr="markdown image"},
       fmta(
-      [[
-            ![<>](<>)
-      ]],
+      [[![<>](<>)]],
             {
                 i(1, "title"),
                 i(2, "link")
@@ -349,9 +343,25 @@ return {
         )
     ),
     -- %%%%%% MATH environment%%%%%%%%%
-    s({trig=";lb", dscr="large brackets"},
+    s({trig=";(", dscr="large ( brackets"},
       fmta(
-      [[\left\( <> \right\)]],
+      [[\left( <> \right]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s({trig=";{", dscr="large { brackets"},
+      fmta(
+      [[\left\{ <> \right]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s({trig=";[", dscr="large [ brackets"},
+      fmta(
+      [[\left[ <> \right]],
             {
                 i(1),
             }
