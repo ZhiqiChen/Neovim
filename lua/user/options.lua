@@ -35,4 +35,6 @@ vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 1                        -- so that `` is visible in markdown files
 vim.opt.pumheight = 10                          -- pop up menu height
 
+vim.opt.cursorline= true
+
 vim.cmd "colorscheme nordfox"
