@@ -67,6 +67,10 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Command --
+keymap("c", "<C-h>", "<C-w>", opts)
+
+-- Plugins --
 -- Nvimtree
 keymap("n", "<leader>n", ":NvimTreeToggle<cr>", opts)
 
