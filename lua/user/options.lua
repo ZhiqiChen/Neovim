@@ -20,6 +20,7 @@ vim.opt.signcolumn = "yes"                      -- always show the sign column, 
 vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
 -- vim.opt.showtabline = 2                         -- always show tabs
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
+vim.opt.splitbelow = true                       -- force all horizontal splits to go to the below of current window
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.guifont = "JetBrains Mono:h13"          -- the font used in graphical neovim applications, use :set guifont=* to display gui for selection
