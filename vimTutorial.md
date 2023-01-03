@@ -1,6 +1,6 @@
 Vim tutorial:
 
-vim commands:
+# vim commands:
 	:wq save and then quit
 	:q! quit without saving
 	:w to just save
@@ -11,7 +11,7 @@ vim commands:
 		V for horizontal block
 		ctrl+v for verticle block
 		
-Command mode (motion):
+# Command mode (motion):
 	by pressing "escape"
 	j down
 	k up
@@ -66,7 +66,7 @@ Command mode (motion):
 	gU[text obj] to Capitalize, gUU for the whole line
 	g& to run the last :s (substitute command) on the whole document.
 	
-Commands:
+# Commands:
 	cw change word delete the next word and put you in insert mode
 	C to delete the rest of the line and put you into insert mode
 	ct(letter): replace till the letter and go into insert mode
@@ -78,7 +78,7 @@ Commands:
 	x to delete one char
 	D to delete to the end of the line
 	u to undo
-	CTRL+R to redo
+	ctrl+r to redo
 	J - join line below to the current one with one space in between
 
 	yy to copy line
@@ -91,7 +91,10 @@ Commands:
 	J accomplishes the opposite by Joining line below with a space
 		gJ Join the line below without a space
 	~ to switch capitalization or g~[text obj].
-Text Objects:
+    ctrl-a increment numbers by 1
+        g-ctrl-a increment numbers in order 1,2,3,4 etc.
+
+# Text Objects:
 	iw inner word
 	is inner sentence (generally not recommended as no white space)
 	i" inner quotes
@@ -115,12 +118,13 @@ Text Objects:
 	( or )
 	< or >
 
-In insert Mode:
-	Ctrl + j - begin new line during insert mode
-	Ctrl + t - indent (move right) line one shiftwidth during insert mode
-	Ctrl + d - de-indent (move left) line one shiftwidth during insert mode
+# In insert Mode:
+	Ctrl + j begin new line during insert mode
+	Ctrl + t indent (move right) line one shiftwidth during insert mode
+	Ctrl + d de-indent (move left) line one shiftwidth during insert mode
+    Ctrl + w delete word
 
-Registers:
+# Registers:
 	"+[command] system clipboard, "+y copys visual mode text into system clipboard
 	""[command] last delete or yank
 	"0[command] last yank
@@ -133,7 +137,7 @@ Registers:
 		"# last edited file. vim uses this when you do ctrl-^
 		
 
-misc:
+# misc:
 	zz to center your curser useful when the cursor is on top/bottom of the screen
 	~ to switch case. upper to lower or vise versa
 	. to do the previous command again
@@ -148,7 +152,7 @@ misc:
 		zg add unknown word to dictionary
 			zug to remove the word from dictionary
 		
-Search:
+# Search:
 	/pattern will search for that pattern
 		n for next
 		N for previous
@@ -175,7 +179,7 @@ Search:
 		:g/1 2/p print out all lines with (1 2)
 	:j join line
 
-Macros:
+# Macros:
 	q(letter) to start recording a macro to the letter
 		then do a bunch of things you want to record
 		end it in command mode by pressing q again
@@ -184,17 +188,17 @@ Macros:
 		by pressing @(capital letter) you can do the macro
 		combining it with #@(capital letter) ie. 20@W you can repeat the macro 20 times
 
-Auto completion: (^means ctrl)
+# Auto completion: (^means ctrl)
 	^p to autocomplete a word.
 	^x^l to autocomplete a line
 	^x^f to autocomplete a file search ( /home/ )
 
-file system:
+# file system:
 	:e [filename] to edit file
 	^o previous file
 	^i next file
 
-marks:
+# marks:
 	m[letter] to save a mark at cursor
 		use marks for local (ie. :'a, 'bs/[substitute]/[another]/gc
         *try to use capital letter for global nav.
@@ -202,13 +206,13 @@ marks:
 	`` return to previous location of a movment ie. G, gg, search
 	ctrl-^ return to previous buffer
 
-Advanced commands:
+# Advanced commands:
     :norm runs a normal command ie. :norm I<br>
     :! runs a bash command
     :read to read the output from other commands
     	:read !ls    will read all of the filenames
     
-surround.vim:
+# surround.vim:
 	ys add surround
 	ds delete
 	cs change
@@ -224,7 +228,7 @@ it is useful for deletion to use a instead of i.
 example = (['one thing', 'other thing'], 2)
 
 
-NerdCommenter:
+# NerdCommenter:
 	[count]<leader>c<space> toggle comment
 	[count]<leader>cc Comment out the current line or text selected in visual mode.
 	[count]<leader>ci Toggles the comment state of the selected line(s) individually.
