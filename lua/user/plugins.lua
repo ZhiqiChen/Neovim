@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
     use "EdenEast/nightfox.nvim" -- ColorScheme
+    use "lukas-reineke/indent-blankline.nvim" -- show indent level
 
     -- Language Specific
     -- LaTex

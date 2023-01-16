@@ -7,11 +7,9 @@ local actions = require "telescope.actions"
 
 telescope.setup {
     defaults = {
-
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "smart" },
-
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,
@@ -35,7 +33,6 @@ telescope.setup {
                 ["<C-l>"] = actions.complete_tag,
                 ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
             },
-
             n = {
                 ["<esc>"] = actions.close,
                 ["<CR>"] = actions.select_default,
@@ -86,3 +83,6 @@ telescope.setup {
         -- please take a look at the readme of the extension you want to configure
     },
 }
+
+
+
