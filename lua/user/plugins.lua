@@ -49,6 +49,10 @@ return require('packer').startup(function(use)
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
     use "EdenEast/nightfox.nvim" -- ColorScheme
     use "lukas-reineke/indent-blankline.nvim" -- show indent level
+    use {
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end 
+    }
 
     -- Language Specific
     -- LaTex
