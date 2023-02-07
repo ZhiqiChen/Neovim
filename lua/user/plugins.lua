@@ -73,23 +73,26 @@ return require('packer').startup(function(use)
     use "junegunn/vim-easy-align" -- [ga] aligning for markdown tables/matrices
 
     -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"  -- lsp completion
+    use {
+        "hrsh7th/nvim-cmp", -- The completion plugin
+        "hrsh7th/cmp-buffer", -- buffer completions
+        "hrsh7th/cmp-path", -- path completions
+        "hrsh7th/cmp-cmdline", -- cmdline completions
+        "saadparwaiz1/cmp_luasnip", -- snippet completions
+        "hrsh7th/cmp-nvim-lsp"  -- lsp completion
+    }
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/mason.nvim" -- simple to use language server installer
-    use "williamboman/mason-lspconfig.nvim"
-    -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use { 
+        "williamboman/mason.nvim", -- simple to use language server installer
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig", -- enable LSP
+        "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
+    }
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
@@ -97,10 +100,12 @@ return require('packer').startup(function(use)
 
     -- Treesitter
     use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-    -- use "JoosepAlviste/nvim-ts-context-commentstring" different context comments jsx
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }    -- use "JoosepAlviste/nvim-ts-context-commentstring" different context comments jsx
 
     -- Git
     use "lewis6991/gitsigns.nvim"

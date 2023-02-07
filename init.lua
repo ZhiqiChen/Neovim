@@ -4,7 +4,7 @@ require "user.keymaps"
 require "user.cmp"
 require "user.lsp"
 require "user.telescope"
--- require "user.treesitter"
+require "user.treesitter" --install llvm
 require "user.autopairs"
 require "user.gitsigns"
 require "user.nvim-tree"

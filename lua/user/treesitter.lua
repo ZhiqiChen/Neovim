@@ -1,11 +1,11 @@
+require 'nvim-treesitter.install'.compilers = { "clang" }
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
     return
 end
-require 'nvim-treesitter.install'.compilers = { "clang" }
 
 configs.setup {
-    ensure_installed = { "c", "lua", "latex", "javascript" , "llvm", "markdown", "sql", "typescript"},
+    ensure_installed = { "c", "lua", "latex", "javascript" , "markdown", "typescript"},
     --[[ ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages ]]
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     ignore_install = { "" }, -- List of parsers to ignore installing
