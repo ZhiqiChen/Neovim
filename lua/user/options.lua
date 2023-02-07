@@ -23,7 +23,7 @@ vim.opt.splitright = true                       -- force all vertical splits to 
 vim.opt.splitbelow = true                       -- force all horizontal splits to go to the below of current window
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.wrap = false                            -- display lines as one long line
-vim.opt.guifont = "JetBrains Mono:h13"          -- the font used in graphical neovim applications, use :set guifont=* to display gui for selection
+vim.opt.guifont = "JetBrainsMono Nerd Font Mono:h13"          -- the font used in graphical neovim applications, use :set guifont=* to display gui for selection
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
 vim.opt.backup = false                          -- creates a backup file
