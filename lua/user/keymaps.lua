@@ -44,7 +44,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("i", "<C-h>", "<C-w>", opts)
 keymap("i", "<C-BS>", "<C-w>", opts)
 keymap("i", "<C-CR>", "<Esc>o", opts)
-keymap("i", "<C-s>", "<Esc>:w<CR>i", opts)
+keymap("i", "<C-s>", "<Esc>:w<CR>a", opts)
 
 -- Visual --
 -- Stay in indent mode
