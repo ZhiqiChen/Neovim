@@ -1,12 +1,13 @@
 require "user.plugins"
 require "user.options"
 require "user.keymaps"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter" --install llvm
+require "user.dashboard"
+require "user.nvim-tree"
 require "user.autopairs"
 require "user.gitsigns"
-require "user.nvim-tree"
 require "user.bufferline"
 require "user.lualine"
+require "user.telescope"
+require "user.cmp"
+require "user.lsp"
+require "user.treesitter" --install llvm

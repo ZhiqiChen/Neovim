@@ -53,7 +53,13 @@ return require('packer').startup(function(use)
         'glacambre/firenvim',
         run = function() vim.fn['firenvim#install'](0) end 
     }
-
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    }
     -- Language Specific
     -- LaTex
     use "lervag/vimtex"
