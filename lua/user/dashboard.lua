@@ -13,15 +13,25 @@ dashboard.section.header.val = {
     "                                                     ",
 }
 
--- Set menu
-dashboard.section.buttons.val = {
-    dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
-    dashboard.button( "f", "  > Find file", ":cd $HOME/Workspace | Telescope find_files<CR>"),
-    dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
-    dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
-}
-
+local getOS = vim.loop.os_uname().sysname
+if string.find(getOS, "Window") then 
+    -- Set menu
+    dashboard.section.buttons.val = {
+        dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
+        dashboard.button( "f", "  > Find file", ":cd D:\\Home | Telescope find_files<CR>"),
+        dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
+        dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+        dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
+    }
+else
+    dashboard.section.buttons.val = {
+        dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
+        dashboard.button( "f", "  > Find file", ":cd $HOME/Workspace | Telescope find_files<CR>"),
+        dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
+        dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+        dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
+    }
+end 
 -- Set footer
 --   NOTE: This is currently a feature in my fork of alpha-nvim (opened PR #21, will update snippet if added to main)
 --   To see test this yourself, add the function as a dependecy in packer and uncomment the footer lines
