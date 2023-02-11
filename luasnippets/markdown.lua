@@ -85,8 +85,8 @@ return {
     s({trig="definition", dscr="Definition"},
         fmta(
             [[
-           ***<>***
-           : <> $\boxed{<>}$ 
+           ###<>
+           - <> $\boxed{<>}$ 
       ]],
             {
                 i(1),
