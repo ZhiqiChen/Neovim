@@ -46,11 +46,12 @@ keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 
 -- Insert --
--- backspace deletes word
+-- Basic stuff from other editors
 keymap("i", "<C-h>", "<C-w>", opts)
 keymap("i", "<C-BS>", "<C-w>", opts)
-keymap("i", "<C-CR>", "<Esc>o", opts)
+keymap("i", "<C-CR>", "<Esc>Ao", opts)
 keymap("i", "<C-s>", "<Esc>:w<CR>a", opts)
+keymap("i", "<C-v>", "<C-r>+", opts)
 
 -- Visual --
 -- Stay in indent mode
