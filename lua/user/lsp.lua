@@ -18,7 +18,8 @@ mason.setup({
 
 
 mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "marksman", "ltex", "clangd", "jdtls", "tsserver", "jedi_language_server" },
+    ensure_installed = { "lua_ls", "marksman", "ltex", "clangd", "jdtls", "tsserver", "jedi_language_server",  --lsp
+        "prettier", "stylua"}, -- formatter/linters
 })
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
