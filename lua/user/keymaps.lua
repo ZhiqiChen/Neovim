@@ -24,6 +24,7 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-f>", "<C-w>o", opts) -- remove other splits except the focus
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -44,6 +45,9 @@ keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
+
+-- Change directory to current file
+keymap("n", "<leader>cd", ":cd %:h<CR>", opts)
 
 -- Insert --
 -- Basic stuff from other editors
@@ -80,6 +84,8 @@ keymap("t", "<C-v>", "<C-r>+", term_opts)
 
 -- Command --
 keymap("c", "<C-h>", "<C-w>", opts)
+keymap("c", "<C-BS>", "<C-w>", opts)
+keymap("c", "<C-v>", "<C-r>+", opts)
 
 -- Plugins --
 -- Nvimtree
@@ -101,5 +107,3 @@ keymap("i", "jk", "<Esc>:lua require('luasnip').expand_or_jump()<CR>", opts)
 keymap("n", "ga", ":EasyAlign<CR>", opts)
 keymap("x", "ga", ":EasyAlign<CR>", opts)
 
--- null-ls format
-keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
