@@ -92,12 +92,15 @@ return require('packer').startup(function(use)
     use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-    -- LSP
-    use { 
+    -- LSP, linters, Dap
+    use {
         "williamboman/mason.nvim", -- simple to use language server installer
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig", -- enable LSP
         "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
+        "jay-babu/mason-null-ls.nvim",
+        "mfussenegger/nvim-dap",
+        "jay-babu/mason-nvim-dap.nvim",
     }
 
     -- Telescope

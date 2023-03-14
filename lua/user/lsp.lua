@@ -71,7 +71,10 @@ mason_lspconfig.setup_handlers {
     -- end
 }
 
--- LIST OF LSP servers
+-- LIST OF LSP servers mason_lspconfig
+-- server-mapping for diff between lsp server names between mason and mason_lspconfig
+-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
+--
 -- AWK  awk_ls
 -- Ada  als
 -- Angular  angularls
