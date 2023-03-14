@@ -9,7 +9,7 @@ end
 
 local diagnostics = {
     "diagnostics",
-    sources = { "nvim_diagnostic" },
+    sources = { "nvim_diagnostic" }, -- maybe add 'nvim_lsp'
     sections = { "error", "warn" },
     symbols = { error = " ", warn = " " },
     colored = false,
@@ -69,16 +69,17 @@ lualine.setup({
         component_separators = { left = "", right = "" },
         -- section_separators = { left = "", right = "" },
         disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+
         always_divide_middle = true,
     },
     sections = {
         lualine_a = { branch, diagnostics },
         lualine_b = { mode },
-        lualine_c = {},
+        lualine_c = { "filename" },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
-        lualine_x = { diff, spaces, "encoding", filetype },
-        lualine_y = { location },
-        lualine_z = { progress },
+        lualine_x = { diff, spaces, "encoding" },
+        lualine_y = { filetype }, --TODO: add what lsp
+        lualine_z = { location },
     },
     inactive_sections = {
         lualine_a = {},
