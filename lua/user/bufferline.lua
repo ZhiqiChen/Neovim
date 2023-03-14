@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-bufferline.setup {
+bufferline.setup({
     options = {
         show_tab_indicators = true,
         show_duplicate_prefix = false, -- whether to show duplicate buffer prefix
@@ -12,8 +12,8 @@ bufferline.setup {
                 filetype = "NvimTree",
                 text = "File Explorer",
                 text_align = "left",
-                separator = true
-            }
+                separator = true,
+            },
         },
-    }
-}
+    },
+})

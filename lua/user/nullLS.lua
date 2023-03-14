@@ -13,14 +13,12 @@ mason_null_ls.setup({
         -- Opt to list sources here, when available in mason.
     },
     automatic_installation = false,
-    automatic_setup = true,         -- Recommended, but optional
+    automatic_setup = true, -- Recommended, but optional
 })
 null_ls.setup({
     sources = {
         -- Anything not supported by mason.
-    }
+    },
 })
 
-require 'mason-null-ls'.setup_handlers()                             -- If `automatic_setup` is true.
-
---                             Note: This is my personal preference.
+require("mason-null-ls").setup_handlers() -- If `automatic_setup` is true.

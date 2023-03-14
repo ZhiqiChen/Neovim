@@ -1,17 +1,17 @@
 local status_ok, mason_nvim_dap = pcall(require, "mason-nvim-dap")
 if not status_ok then
-	return
+    return
 end
 
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
-	return
+    return
 end
 
 mason_nvim_dap.setup({
-	ensure_installed = {},
-	automatic_setup = true,
-	automatic_installation = false,
+    ensure_installed = {},
+    automatic_setup = true,
+    automatic_installation = false,
 })
 
 require("mason-nvim-dap").setup_handlers({})
