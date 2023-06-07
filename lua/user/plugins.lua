@@ -73,6 +73,7 @@ return require('packer').startup(function(use)
         end
     }
     use "nvim-tree/nvim-tree.lua"
+    use 'mbbill/undotree'
     -- use 'terryma/vim-multiple-cursors'
     use "tpope/vim-surround"
     use "tpope/vim-repeat"

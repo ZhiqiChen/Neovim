@@ -107,6 +107,12 @@ keymap("i", "jk", "<Esc>:lua require('luasnip').expand_or_jump()<CR>", opts)
 keymap("n", "ga", ":EasyAlign<CR>", opts)
 keymap("x", "ga", ":EasyAlign<CR>", opts)
 
+-- null-ls format
+keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
+
+-- undotree
+keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts)
+
 -- DAP
 keymap("n", "<F5>", ":lua require('dap').continue()<CR>", opts)
 keymap("n", "<F10>", ":lua require('dap').step_over()<CR>", opts)
