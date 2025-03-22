@@ -18,7 +18,8 @@ mason.setup({
 
 
 mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "marksman", "ltex", "clangd", "jdtls", "tsserver",  --lsp
+    ensure_installed = { "lua_ls", "marksman", "ltex", "clangd", "jdtls" --lsp
+        -- "tsserver",
             -- , "jedi_language_server"
 --        "prettier", "stylua" -- formatter/linters
     },
