@@ -49,17 +49,18 @@ return require('packer').startup(function(use)
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
     use "EdenEast/nightfox.nvim" -- ColorScheme
     use "lukas-reineke/indent-blankline.nvim" -- show indent level
-    use {
-        'glacambre/firenvim',
-        run = function() vim.fn['firenvim#install'](0) end 
-    }
-    use {
+    -- use { -- brower nvim capabilities. Removed for too niche
+    --     'glacambre/firenvim',
+    --     run = function() vim.fn['firenvim#install'](0) end 
+    -- }
+    use { -- dashboard
         'goolord/alpha-nvim',
         requires = { 'nvim-tree/nvim-web-devicons' },
         config = function ()
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
     }
+
     -- Language Specific
     -- LaTex
     use "lervag/vimtex"
@@ -72,12 +73,14 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use "nvim-tree/nvim-tree.lua"
+    use "nvim-tree/nvim-tree.lua" --File nav
     use 'mbbill/undotree'
     -- use 'terryma/vim-multiple-cursors'
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "junegunn/vim-easy-align" -- [ga] aligning for markdown tables/matrices
+    use "lewis6991/gitsigns.nvim" -- git
+
 
     -- cmp plugins
     use {
@@ -116,9 +119,6 @@ return require('packer').startup(function(use)
             ts_update()
         end,
     }    -- use "JoosepAlviste/nvim-ts-context-commentstring" different context comments jsx
-
-    -- Git
-    use "lewis6991/gitsigns.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
