@@ -110,6 +110,16 @@ keymap("x", "ga", ":EasyAlign<CR>", opts)
 -- null-ls format
 keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
 
+-- lsp code action
+keymap("n", "<A-CR>", ":lua vim.lsp.buf.code_action()<CR>", opts)
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+keymap('n', '<space>e', "vim.diagnostic.open_float", opts)
+keymap('n', '[d', "vim.diagnostic.goto_prev", opts)
+keymap('n', ']d', "vim.diagnostic.goto_next", opts)
+keymap('n', '<space>q', "vim.diagnostic.setloclist", opts)
+-- *** MORE IN lsp file!!
+
+
 -- undotree
 keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 

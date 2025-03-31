@@ -1,4 +1,6 @@
-require 'nvim-treesitter.install'.compilers = { "clang" }
+-- require 'nvim-treesitter.install'.compilers = { "clang" }
+-- This might be a problem, (https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)
+-- https://stackoverflow.com/questions/66692772/nvim-treesitter-installation-on-windows
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
     return
