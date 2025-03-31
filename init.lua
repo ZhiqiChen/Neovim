@@ -18,4 +18,7 @@ require "user.treesitter" --install llvm and Clang
 -- packer install
 -- clang and gcc install for treesitter 
 --  (On windows install YOU MUST install visual studio and clang thro visual studio installer!)
+--  Install the desktop dev C++ tools in the installer
+--  in nodejs folder "npm install tree-sitter-cli"
+--  Make sure to add env variables to path for LLVM and MSVC, tree-sitter-cli (the right version x64)
 -- ripgrep for telescope
