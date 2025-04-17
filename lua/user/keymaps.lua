@@ -57,6 +57,9 @@ keymap("i", "<C-CR>", "<Esc>Ao", opts)
 keymap("i", "<C-s>", "<Esc>:w<CR>a", opts)
 keymap("i", "<C-v>", "<C-r>+", opts)
 
+-- spellchecking
+keymap("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<C-g>u", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -115,8 +118,8 @@ keymap("n", "<leader>ff", ":lua vim.lsp.buf.format()<CR>", opts)
 keymap("n", "<A-CR>", ":lua vim.lsp.buf.code_action()<CR>", opts)
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- keymap('n', '<leader>e', "vim.diagnostic.open_float", opts)
-keymap('n', '[d', "vim.diagnostic.goto_prev", opts)
-keymap('n', ']d', "vim.diagnostic.goto_next", opts)
+-- keymap('n', '[d', "vim.diagnostic.goto_prev", opts) -- already part of vim default
+-- keymap('n', ']d', "vim.diagnostic.goto_next", opts)
 -- keymap('n', '<leader>q', "vim.diagnostic.setloclist", opts)
 -- *** MORE IN lsp file!!
 
