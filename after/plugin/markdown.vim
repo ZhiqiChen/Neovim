@@ -16,7 +16,7 @@ autocmd FileType markdown inoremap <buffer> <c-;> <Esc>/<++><Enter>"_c4l
 " autocmd FileType markdown nnoremap k gk
 " autocmd FileType markdown inoremap <Tab> <c-t>
 " autocmd FileType markdown inoremap <s-tab> <c-d>
-autocmd FileType markdown set spell spelllang=en_us
+autocmd FileType markdown set spell spelllang=en_ca
 autocmd FileType markdown inoremap <c-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " lists
