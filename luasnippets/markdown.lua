@@ -95,6 +95,39 @@ return {
             }
         )
     ),
+    s({trig="definitionColor", dscr="Simplified Definition with Orange text"},
+        fmta(
+            [[
+           $\colorbox{faf6ea}{\textcolor{Coral}{<>}}$    
+
+           $\boxed{\text{<>}}$ 
+      ]],
+            {
+                i(1),
+                i(2),
+            }
+        )
+    ),
+    s({trig="textColourGreen", dscr="Text with Green Text"},
+        fmta(
+            [[
+           $\textcolor{LimeGreen}{<>}$    
+      ]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s({trig="textColourPurple", dscr="Example with Purple colour"},
+        fmta(
+            [[
+           $\textcolor{Orchid}{Example <>}$    
+      ]],
+            {
+                i(1),
+            }
+        )
+    ),
         s({trig="matrix", dscr="make a matrix"},
           fmta(
           [[
@@ -298,7 +331,7 @@ return {
             }
         )
     ),
-    s({trig=";bo", dscr="boxed"},
+    s({trig="\\bo", dscr="boxed"},
       fmta(
       [[
             \boxed{<>}
@@ -308,7 +341,7 @@ return {
             }
         )
     ),
-    -- %%%%%% MATH Accents%%%%%%%%%
+    -- %%%%%% MATH Accents, all use ; to start%%%%%%%%%
     s({trig=";hh", dscr="hat accent"},
       fmta(
       [[\hat{<>}]],
