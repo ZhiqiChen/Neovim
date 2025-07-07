@@ -53,7 +53,7 @@ keymap("n", "<leader>cd", ":cd %:h<CR>", opts)
 -- Basic stuff from other editors
 keymap("i", "<C-h>", "<C-w>", opts)
 keymap("i", "<C-BS>", "<C-w>", opts)
-keymap("i", "<C-CR>", "<Esc>Ao", opts)
+keymap("i", "<C-CR>", "<Esc>A<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:w<CR>a", opts)
 keymap("i", "<C-v>", "<C-r>+", opts)
 
