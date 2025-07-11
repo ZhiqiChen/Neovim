@@ -7,10 +7,6 @@ if not status_ok then
     return
 end
 
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-    return
-end
 
 -- Mason setup
 mason.setup({
@@ -18,7 +14,7 @@ mason.setup({
 
 
 mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "marksman", "ltex", "clangd", "jdtls" --lsp
+    ensure_installed = { "lua_ls", "marksman", "clangd", "jdtls" --lsp
         -- "tsserver",
             -- , "jedi_language_server"
 --        "prettier", "stylua" -- formatter/linters
@@ -49,22 +45,22 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 --Automatic server setup
-mason_lspconfig.setup_handlers {
-    -- The first entry (without a key) will be the default handler
-    -- and will be called for each installed server that doesn't have
-    -- a dedicated handler.
-    function(server_name) -- default handler (optional)
-        lspconfig[server_name].setup {
-            on_attach = on_attach,
-        }
-    end,
-
-    -- Next, you can provide a dedicated handler for specific servers.
-    -- For example, a handler override for the `rust_analyzer`:
-    -- ["rust_analyzer"] = function ()
-    --     require("rust-tools").setup {}
-    -- end
-}
+-- mason_lspconfig.setup_handlers {
+--     -- The first entry (without a key) will be the default handler
+--     -- and will be called for each installed server that doesn't have
+--     -- a dedicated handler.
+--     function(server_name) -- default handler (optional)
+--         lspconfig[server_name].setup {
+--             on_attach = on_attach,
+--         }
+--     end,
+--
+--     -- Next, you can provide a dedicated handler for specific servers.
+--     -- For example, a handler override for the `rust_analyzer`:
+--     -- ["rust_analyzer"] = function ()
+--     --     require("rust-tools").setup {}
+--     -- end
+-- }
 
 -- LIST OF LSP servers mason_lspconfig
 -- server-mapping for diff between lsp server names between mason and mason_lspconfig

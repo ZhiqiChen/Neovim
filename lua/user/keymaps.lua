@@ -56,6 +56,7 @@ keymap("i", "<C-BS>", "<C-w>", opts)
 keymap("i", "<C-CR>", "<Esc>A<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:w<CR>a", opts)
 keymap("i", "<C-v>", "<C-r>+", opts)
+keymap("i", "<C-z>", "<Esc>ui", opts)
 
 -- spellchecking
 keymap("i", "<C-l>", "<C-g>u<Esc>[s1z=`]a<C-g>u", opts)

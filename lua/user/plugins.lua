@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim" -- info bar at the bottom
     use "EdenEast/nightfox.nvim" -- ColorScheme
-    use "lukas-reineke/indent-blankline.nvim" -- show indent level
+    -- use "lukas-reineke/indent-blankline.nvim" -- show indent level
     -- use { -- brower nvim capabilities. Removed for too niche
     --     'glacambre/firenvim',
     --     run = function() vim.fn['firenvim#install'](0) end 
@@ -98,8 +98,8 @@ return require('packer').startup(function(use)
 
     -- LSP, linters, Dap
     use {
-        "williamboman/mason.nvim", -- simple to use language server installer
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason.nvim", -- simple to use language server installer
+        "mason-org/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig", -- enable LSP
         "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
         "jay-babu/mason-null-ls.nvim",
