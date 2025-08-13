@@ -85,8 +85,8 @@ return {
     s({trig="definition", dscr="Definition"},
         fmta(
             [[
-           ###<>
-           - <> $\boxed{<>}$ 
+           ### <>
+           - **<>** $\boxed{<>}$ 
       ]],
             {
                 i(1),
@@ -98,9 +98,9 @@ return {
     s({trig="definitionColor", dscr="Simplified Definition with Orange text"},
         fmta(
             [[
-           $\colorbox{faf6ea}{\textcolor{Coral}{<>}}$    
+           $\colorbox{faf6ea}{\textcolor{Coral}{\textbf{<>}}}$    
 
-           $\boxed{\text{<>}}$ 
+           $\colorbox{faf6ea}{\textcolor{Coral}{<>}}$    
       ]],
             {
                 i(1),
@@ -112,6 +112,16 @@ return {
         fmta(
             [[
            $\textcolor{LimeGreen}{<>}$    
+      ]],
+            {
+                i(1),
+            }
+        )
+    ),
+    s({trig="textColourRed", dscr="Text with Red Text"},
+        fmta(
+            [[
+           $\textcolor{red}{<>}$    
       ]],
             {
                 i(1),
