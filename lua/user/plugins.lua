@@ -99,7 +99,6 @@ return require('packer').startup(function(use)
     -- LSP, linters, Dap
     use {
         "mason-org/mason.nvim", -- simple to use language server installer
-        "mason-org/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig", -- enable LSP
         "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
         "jay-babu/mason-null-ls.nvim",
